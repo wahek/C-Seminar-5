@@ -3,6 +3,27 @@
 
 // [345, 897, 568, 234] -> 2
 
+int[] array = FillArray();
+foreach (int i in array){
+    Console.Write($"[{String.Join("", i)}]");
+}
+Console.Write($"-> {even(array)} чётных элементов");
+int [] FillArray(){
+    int[] array = new int[8];
+    for (int i = 0; i < array.Length; i++){
+        array[i] = new Random().Next(100, 1000);
+    }
+    return array;
+}
+
+int even(int[] arr){
+    int count = 0;
+    for(int i = 0; i < arr.Length; i++){
+        if(arr[i]%2 == 0) count++;
+    }
+    return count;
+}
+
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 // [3, 7, 23, 12] -> 19
